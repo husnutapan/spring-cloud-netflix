@@ -9,6 +9,10 @@ public class Provider {
     private Boolean active;
     private Integer userId;
 
+
+    public Provider() {
+    }
+
     public Provider(int id, String name, Date createdDate, Boolean active, Integer userId) {
         this.id = id;
         this.name = name;
