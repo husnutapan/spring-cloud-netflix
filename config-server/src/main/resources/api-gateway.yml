@@ -1,0 +1,17 @@
+server:
+  port: 5000
+
+zuul:
+  ignoredServices: '*'
+  routes:
+    provider-service:
+      path: /provider/**
+      serviceId: provider-service
+    user-service:
+      path: /user/**
+      serviceId: user-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
