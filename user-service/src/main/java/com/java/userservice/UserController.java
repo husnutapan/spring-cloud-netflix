@@ -16,10 +16,17 @@ public class UserController {
     @Autowired
     private ProviderClient providerClient;
 
+    @Autowired
+    private NodejsClient nodejsClient;
 
     @GetMapping("/{id}")
     public List<Provider> getProviders(@PathVariable("id") Integer id) {
         return providerClient.providers();
+    }
+
+    @GetMapping("/pingToNodeJS")
+    public String ping() {
+        return nodejsClient.ping();
     }
 
 
